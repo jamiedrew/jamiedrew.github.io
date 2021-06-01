@@ -1,0 +1,62 @@
+@use "base";
+
+header {
+    h2 {
+        text-transform: uppercase;
+        font-weight: 700;
+    };
+
+    .link {
+        font-family: base.$monospace;
+    }
+    
+    .link {
+        a, a:visited {
+            color: base.$black;
+            text-decoration: none;
+        }
+    }
+    
+    .link a:hover {
+        color: base.$teal;
+        text-decoration: underline;
+    }
+}
+
+main {
+    h3 {
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    
+    p, ol, ul, li {
+        font-family: base.$monospace;
+    }
+    
+    a, a:visited {
+        color: base.$teal;
+        text-decoration: underline;
+    }
+}
+
+.frontpage {
+    margin-top: 1rem;
+    width: 75%;
+    display: flex;
+    gap: 1rem;
+
+    img {
+        flex: 35;
+    }
+
+    .info {
+        flex: 65;
+    }
+}
+
+.gallery {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+}
