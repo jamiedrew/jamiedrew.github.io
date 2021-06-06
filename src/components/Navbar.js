@@ -21,7 +21,7 @@ export default function Navbar() {
     const { title } = data.site.siteMetadata;
 
     return (
-        <nav class="navbar">
+        <nav className="navbar">
             <span id="title"><Link to="/">{title}</Link></span>
 
             <ul className="links">

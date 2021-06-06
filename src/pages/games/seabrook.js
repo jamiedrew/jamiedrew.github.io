@@ -10,19 +10,26 @@ const seabrook = () => {
             <header>
                 <h2>The Incident at the Seabrook Residence</h2>
                 <span className="link"><a href="https://otterdisgrace.itch.io/seabrook"><Fa icon={faHtml5} /> Play in browser</a></span>
+
+                <ImageGallery folder="seabrook" />
             </header>
 
             <main>
-                <p>I wanted to make a cyberpunk story, but not a neon-and-rainslick cyberpunk story; I wanted to write the kind of cyberpunk that dresses itself in chinos and sits down for eight hours a day to spy on you and sell your darkest secrets to advertisers.</p>
+                <p>You, whoever you might be, are a contractor working with the Department of <span className="redacted">█████████████</span>, digitising their old paper records for the new era. You've been assigned the poorly-scanned case of the Seabrooks, a family in a small Northern town who reported bumps in the night almost 20 years ago.</p>
 
-                <p><em>The Incident</em> is a ghost story, too. And a family drama. But it's not <em>your</em> family -- it's a family that lives on the other side of the screen. You've taken a job cleaning up digitised records for the Department of █████████████; the computer's Optical Character Recognition systems can only do so much, and they need a human eye to look over them.</p>
+                <h3>Our cyberpunk future is not as cool as I thought it would be</h3>
+                <p>I wanted to make a cyberpunk story, but not a neon-and-rainslick cyberpunk story; I wanted to write the kind of cyberpunk that dresses itself in chinos and sits down for eight hours a day to spy on you and sell your darkest secrets to advertisers.</p> 
 
-                <p>To fill in the blanks in the story of the Seabrooks you'll need to rely on context clues. Does that garbled text refer to a "dog" or a "cat"? Did Harry ask Jeeves about "inferential statistics" or a "coal mine disaster"?</p>
+                <h3>Simulating the worst jobs I've ever had</h3>
+                <p><em>The Incident...</em> is inspired by two degrees in linguistics and the hours I spent transcribing audio and making sense of historical documents, as well as a couple of years working part-time in audio transcription. These weren't <em>bad</em> jobs, exactly, but it's hard not to get invested in the lives of the people you're listening to and reading about, and it feels sort of unfair that they don't even know you exist.</p>
 
-                <p>Just <em>who</em> is that knocking on the door at night?</p>
+                <h3>Player <del>Complaints</del> Responses</h3>
+                <p>Within the first month of its release more than 500 people played <em>The Incident at the Seabrook Residence</em>, a lot of them more than once. There's a grading system in place that tracks how well you "performed" and unlocks a secret ending with a grade of A or above.</p>
+
+                <p>The game is set in the last days of 2003, but a lot of players in 2020 resonated with that secret ending, in which one of the characters pushes back against your state-sanctioned invasion of her privacy.</p>
             </main>
 
-            <ImageGallery folder="seabrook" />
+            
         </Layout>
     )
 }

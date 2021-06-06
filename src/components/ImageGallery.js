@@ -31,6 +31,7 @@ const ImageGallery = ({ folder }) => {
         <div className="gallery">
             { images.map(img => 
                 <GatsbyImage
+                    key={img.node.name}
                     image={getImage(img.node)}
                     alt="" />
             ) }
