@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
 import Layout from "../../components/Layout";
+import { FontAwesomeIcon as Fa} from '@fortawesome/react-fontawesome'
+import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 
 const Micronote = () => {
     return (
@@ -8,7 +10,7 @@ const Micronote = () => {
 
             <header>
                 <h2>Micronote</h2>
-                <span className="link"><a href="http://micronote.herokuapp.com">micronote.herokuapp.com</a></span>
+                <div className="link"><Fa icon={faAngleDoubleRight}/> <a href="http://micronote.herokuapp.com">micronote.herokuapp.com</a></div>
             </header>
             
             <main>

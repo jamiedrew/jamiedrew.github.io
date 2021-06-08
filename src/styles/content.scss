@@ -1,6 +1,11 @@
 @use "base";
 
 header {
+    
+    @include base.mobile {
+        text-align: center;
+    }
+
     h2 {
         text-transform: uppercase;
         font-weight: 700;
@@ -8,18 +13,30 @@ header {
 
     .link {
         font-family: base.$monospace;
-    }
-    
-    .link {
+        margin-top: -0.6rem;
+        margin-bottom: 2rem;
+
         a, a:visited {
             color: base.$black;
             text-decoration: none;
+
+            @include base.mobile {
+                background-color: base.$teal;
+                padding: 0.4rem;
+                color: base.$white;
+            }
+
+            &:hover {
+                color: base.$teal;
+                text-decoration: underline;
+
+                @include base.mobile {
+                    background-color: base.$grey;
+                    color: base.$black;
+                    text-decoration: none;
+                }
+            }
         }
-    }
-    
-    .link a:hover {
-        color: base.$teal;
-        text-decoration: underline;
     }
 }
 
@@ -36,6 +53,12 @@ main {
     a, a:visited {
         color: base.$teal;
         text-decoration: underline;
+
+        &:hover {
+            background-color: base.$teal;
+            color: base.$white;
+            text-decoration: none;
+        }
     }
 
     .redacted {
@@ -50,12 +73,47 @@ main {
     display: flex;
     gap: 1rem;
 
+    @include base.mobile {
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
     img {
         flex: 35;
+
+        @include base.mobile {
+            max-width: 350px;
+            flex: 0;
+        }
     }
 
     .info {
         flex: 65;
+    }
+
+    @include base.desktop {
+        ul.socials {
+            display: none;
+        }
+    }
+
+    @include base.mobile {
+        ul.socials {
+            color: base.$black;
+            background-color: base.$white;
+            padding: 0.2rem 1rem;
+            z-index: 100;
+
+            a, a:visited {
+                color: base.$black;
+
+                &:hover, &:active {
+                    color: base.$teal;
+                }
+            }
+        }
     }
 }
 
@@ -64,12 +122,8 @@ main {
     margin: 2rem auto;
     display: flex;
     gap: 1rem;
-}
 
-.show {
-    display: block;
-}
-
-.hide {
-    display: none;
+    @include base.mobile {
+        display: none;
+    }
 }

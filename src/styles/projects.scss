@@ -7,6 +7,10 @@
         color: base.$black;
         text-decoration: none;
     }
+
+    @include base.mobile {
+        width: 100%;
+    }
 }
 
 .card {
@@ -24,5 +28,10 @@
     &:hover {
         background-color: base.$teal;
         color: base.$white;
+    }
+
+    @include base.mobile {
+        text-align: center;
+        padding: 0.6rem;
     }
 }

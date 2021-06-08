@@ -21,6 +21,14 @@ module.exports = {
         path: `${__dirname}/src/images/projects/`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "Jamie Drew",
+        start_url: "/",
+        icon: "src/images/pizza.png"
+      }
+    }
   ],
   siteMetadata: {
     title: "Jamie Drew",

@@ -26,12 +26,12 @@ export default function Navbar() {
 
             <ul className="links">
                 <li><Link to="/games">Games</Link></li>
-                <li><Link to="/projects">Web Things</Link></li>
+                <li><Link to="/projects">Internet</Link></li>
             </ul>
 
             <ul className="socials">
                 <li>
-                    <a href="mailto:hello@jamiedrew.co.uk">
+                    <a href="mailto:jamiedrew@tutanota.com">
                         <Fa icon={faEnvelopeOpenText} />
                         <span>email</span>
                     </a>
