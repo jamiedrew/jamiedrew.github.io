@@ -1,7 +1,5 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import { FontAwesomeIcon as Fa} from '@fortawesome/react-fontawesome'
-import { faHtml5 } from "@fortawesome/free-brands-svg-icons";
 
 const TreasureHunter = () => {
     return (
