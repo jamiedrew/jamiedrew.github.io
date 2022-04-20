@@ -3,6 +3,7 @@
 
 <head>
     <link rel="shortcut icon" type="image/png" href="gameboy.png">
+    <!-- favicon by freepik @ flaticon.com -->
 
     <title>Jamie Drew</title>
 
@@ -41,25 +42,26 @@
 
             <!-- navigation -->
             <div class="selector">
-                <a :class="{ 'active': tab === "undra" @click.prevent="tab = 'undra'" href="#"}>Undra</a>
-                <a :class="{ 'active': tab === "snack-man" @click.prevent="tab = 'snack-man'" href="#"}>Snack Man</a>
-                <a :class="{ 'active': tab === "crimson-shrine" @click.prevent="tab = 'crimson-shrine'" href="#"}>Crimson Shrine</a>
-                <a :class="{ 'active': tab === "seabrook" @click.prevent="tab = 'seabrook'" href="#"}>The Incident...</a>
-                <a :class="{ 'active': tab === "jams" @click.prevent="tab = 'jams'" href="#"}>Game Jams</a>
+                <a :class="{ 'active': tab === "undra" @click.prevent="tab = 'undra'" href="#undra"}>Undra</a>
+                <a :class="{ 'active': tab === "snack-man" @click.prevent="tab = 'snack-man'" href="#snack-man"}>Snack Man</a>
+                <a :class="{ 'active': tab === "crimson-shrine" @click.prevent="tab = 'crimson-shrine'" href="#crimson-shrine"}>Crimson Shrine</a>
+                <a :class="{ 'active': tab === "seabrook" @click.prevent="tab = 'seabrook'" href="#seabrook"}>The Incident...</a>
+                <a :class="{ 'active': tab === "jams" @click.prevent="tab = 'jams'" href="#jams"}>Game Jams</a>
             </div>
 
             <!-- content -->
 
             <div class="content">
 
-                <div x-show="tab === 'undra'">
+                <div id="undra" x-show="tab === 'undra'">
+                    <img src="images/undra.jpg" />
                     <h3>Undra</h3>
                     <p><a href="https://studiodecent.com">Studio Decent</a>'s upcoming flagship MMO, a comedy-horror industry simulator, which utilises cutting-edge Web3 technology to enhance the MMO experience for players.</p>
                     <p>Initially I came on board to help with some digital cinematography in Unity, learning a great deal about render pipelines in the process, and they haven't got rid of me yet. At Studio Decent I'm helping to develop and implement the game's systems and mechanics.</p>
                     <a href="https://undra.game" class="game-link">Coming 2022</a>
                 </div>
 
-                <div x-show="tab === 'snack-man'">
+                <div id="snack-man" x-show="tab === 'snack-man'">
                     <h3>Snack Man</h3>
                     <p>In October 2021, the Bureau of Investigative Journalism broke a story about <a href="https://www.thebureauinvestigates.com/stories/2021-10-13/british-cheese-dairy-deforestation-brazil">commercial cheese production (like the kind you get in Tesco) causing massive deforestation in Brazil</a>.</p>
                     <p>The timing aligned wonderfully with <a href="https://ukcop26.org/">COP26</a>, the UN's climate change conference in Glasgow, and so with a <em>very</em> quick turnaround -- just two weeks -- we made a small Pac-Man-like game in which you play as a Babybel wreaking havoc in the rainforest.</p>
@@ -68,7 +70,8 @@
                     <p>The game was built with touch controls in mind; players only have to swipe to guide the little Edam through its mazes. The game was a hit at the conference in terms of downloads, but I personally made several enemies because of level five.</p>
                 </div>
 
-                <div x-show="tab === 'crimson-shrine'">
+                <div id="crimson-shrine" x-show="tab === 'crimson-shrine'">
+                    <img src="images/crimson-shrine.png" />
                     <h3>Crimson Shrine</h3>
                     <p>A remake of a beloved game that doesn't exist.</p>
                     <p>For Hallowe'en 2020 I made a first-person shooter inspired by the sorely-missed <em>TimeSplitters</em> games; the stories of Robert W.Chambers, James Tiptree Jr., MR James, etc.; and <em>Halo 3</em>'s "Ghost of Lockout."</p>
@@ -78,7 +81,8 @@
                     <a href="https://otterdisgrace.itch.io/crimson-shrine" class="game-link">Windows</a>
                 </div>
 
-                <div x-show="tab === 'seabrook'">
+                <div id="seabrook" x-show="tab === 'seabrook'">
+                    <img src="images/seabrook.png" />
                     <h3>The Incident at the Seabrook Residence</h3>
                     <p>You, whoever you might be, are a contractor working with the Department of <span className="redacted">█████████████</span>, digitising their old paper records for the new era. You've been assigned the poorly-scanned case of the Seabrooks, a family in a small Northern town who reported bumps in the night almost 20 years ago.</p>
                     <p>I wanted to make a cyberpunk story, but not a neon-and-rainslick cyberpunk story; I wanted to write the kind of cyberpunk that dresses itself in chinos and sits down for eight hours a day to spy on you and sell your darkest secrets to advertisers.</p> 
@@ -89,7 +93,7 @@
                     <a href="https://otterdisgrace.itch.io/seabrook" class="game-link">Play in browser</a>
                 </div>
 
-                <div x-show="tab === 'jams'">
+                <div id="jams" x-show="tab === 'jams'">
                     <h3>Game Jams</h3>
 
                     <h4>Treasure Hunter</h4>
@@ -98,9 +102,9 @@
                     <a href="https://otterdisgrace.itch.io/treasure-hunter" class="game-link">Play in Browser</a>
 
                     <h4>A Funeral</h4>
-                    <p>One of the first things I ever did! For the Ludum Dare, one of those "press X to contemplate mortality" type games.</p>
+                    <p>One of the first things I ever did! For the Ludum Dare, one of those "press X to contemplate mortality" type games. You're a knight keeping his dead friend's pyre alight, but there's only so much wood in the clearing.</p>
                     <p>It was the early days of the COVID-19 pandemic. We were all going through it.</p>
-                    <a href="https://otterdisgrace.itch.io/a-funeral" class=""game-link">Play in Browser</a>
+                    <a href="https://otterdisgrace.itch.io/a-funeral" class="game-link">Play in Browser</a>
 
                 </div>
                 
