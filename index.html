@@ -2,89 +2,110 @@
 <html lang="en">
 
 <head>
-    <<link rel="shortcut icon" type="image/png" href="gameboy.png">
+    <link rel="shortcut icon" type="image/png" href="gameboy.png">
 
     <title>Jamie Drew</title>
 
     <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script src="scripts.js" defer></script>
     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
 
-    <div id="sidebar">
-        <header>
+    <header>
+        <div id="title">
             <h1>Jamie Drew</h1>
             <h2>Game Boy</h2>
-        </header>
-
-        <!-- <nav>
-            <p><a href="#projects">Projects</a></p>
-            <p><a href="#contact">Contact</a></p>
-        </nav> -->
-
-        <div id="contact">
-            <h2>Call Me</h2>
-            <p>hello@jamiedrew.co.uk</p>
         </div>
-    </div>
+
+        <nav>
+            <a href="mailto:hello@jamiedrew.co.uk">Email</a>
+            <a href="https://twitter.com/heyjamiedrew">Twitter</a>
+            <a href="https://otterdisgrace.itch.io">Itch.io</a>
+        </nav>
+    </header>
 
     <main>
 
-        <div id="#about">
-            <p>In short: I used to be a camera man, and now I'm a code man.</p>
+        <div id="about">
+            <p>In short: I used to be a camera man, and now I'm a games man.</p>
             <p>In long: I was a creative producer for about a decade. Did okay. Won some awards. Then while we were locked inside for most of 2020, I started learning how to make games and internet things. It was that or cabin fever.</p>
             <p>Then it turns out making games is fun? And rewarding? I get to make a little guy run around on a screen? I love that! Who wouldn't love that? So I do that now.</p>
-            <p>(I'm still sometimes a camera man, but now I do it for fun.)</p>
+            <p>(I'm still a camera man, but <a href="https://jamiedrew.co.uk">now I do it for fun</a>.)</p>
         </div>
 
-        <div id="projects">
+        <div id="projects-wrapper"
+            x-data="{ tab: 'null' }">
 
-            <div class="project" id="undra">
-                <h3>Undra</h3>
-                <p><a href="https://studiodecent.com">Studio Decent</a>'s upcoming flagship MMO, a comedy-horror industry simulator, which utilises cutting-edge Web3 technology to enhance the MMO experience for players.</p>
-                <p>Initially I came on board to help with some digital cinematography in Unity, learning a great deal about render pipelines in the process, and they haven't got rid of me yet. At Studio Decent I'm helping to develop and implement the game's systems and mechanics.</p>
+            <!-- navigation -->
+            <div class="selector">
+                <a :class="{ 'active': tab === "undra" @click.prevent="tab = 'undra'" href="#"}>Undra</a>
+                <a :class="{ 'active': tab === "snack-man" @click.prevent="tab = 'snack-man'" href="#"}>Snack Man</a>
+                <a :class="{ 'active': tab === "crimson-shrine" @click.prevent="tab = 'crimson-shrine'" href="#"}>Crimson Shrine</a>
+                <a :class="{ 'active': tab === "seabrook" @click.prevent="tab = 'seabrook'" href="#"}>The Incident...</a>
+                <a :class="{ 'active': tab === "jams" @click.prevent="tab = 'jams'" href="#"}>Game Jams</a>
             </div>
 
-            <div class="project" id="snack-man">
-                <h3>Snack Man</h3>
-                <p>In October 2021, the Bureau of Investigative Journalism broke a story about <a href="https://www.thebureauinvestigates.com/stories/2021-10-13/british-cheese-dairy-deforestation-brazil">commercial cheese production (like the kind you get in Tesco) causing massive deforestation in Brazil</a>.</p>
-                <p>The timing aligned wonderfully with <a href="https://ukcop26.org/">COP26</a>, the UN's climate change conference in Glasgow, and so with a <em>very</em> quick turnaround -- just two weeks -- we made a small Pac-Man-like game in which you play as a Babybel wreaking havoc in the rainforest.</p>
-                <p>A huge challenge was the delivery of the game in such a small timeframe -- there wasn't enough time to get it through Apple or Google's app store policies. The conference venue is also well-known for being a cold spot for mobile phone signals.</p>
-                <p>So we utilised Unity's experimental <a href="https://unity.com/solutions/instant-games">Project Tiny</a> entity-component system and kept the game's footprint, well, tiny, so that conference attendees could play this game on their phones between talks.</p>
-                <p>The game was built with touch controls in mind; players only have to swipe to guide the little Edam through its mazes. The game was a hit at the conference in terms of downloads, but I personally made several enemies because of level five.</p>
+            <!-- content -->
+
+            <div class="content">
+
+                <div x-show="tab === 'undra'">
+                    <h3>Undra</h3>
+                    <p><a href="https://studiodecent.com">Studio Decent</a>'s upcoming flagship MMO, a comedy-horror industry simulator, which utilises cutting-edge Web3 technology to enhance the MMO experience for players.</p>
+                    <p>Initially I came on board to help with some digital cinematography in Unity, learning a great deal about render pipelines in the process, and they haven't got rid of me yet. At Studio Decent I'm helping to develop and implement the game's systems and mechanics.</p>
+                    <a href="https://undra.game" class="game-link">Coming 2022</a>
+                </div>
+
+                <div x-show="tab === 'snack-man'">
+                    <h3>Snack Man</h3>
+                    <p>In October 2021, the Bureau of Investigative Journalism broke a story about <a href="https://www.thebureauinvestigates.com/stories/2021-10-13/british-cheese-dairy-deforestation-brazil">commercial cheese production (like the kind you get in Tesco) causing massive deforestation in Brazil</a>.</p>
+                    <p>The timing aligned wonderfully with <a href="https://ukcop26.org/">COP26</a>, the UN's climate change conference in Glasgow, and so with a <em>very</em> quick turnaround -- just two weeks -- we made a small Pac-Man-like game in which you play as a Babybel wreaking havoc in the rainforest.</p>
+                    <p>A huge challenge was the delivery of the game in such a small timeframe -- there wasn't enough time to get it through Apple or Google's app store policies. The conference venue is also well-known for being a cold spot for mobile phone signals.</p>
+                    <p>So we utilised Unity's experimental <a href="https://unity.com/solutions/instant-games">Project Tiny</a> entity-component system and kept the game's footprint, well, tiny, so that conference attendees could play this game on their phones between talks.</p>
+                    <p>The game was built with touch controls in mind; players only have to swipe to guide the little Edam through its mazes. The game was a hit at the conference in terms of downloads, but I personally made several enemies because of level five.</p>
+                </div>
+
+                <div x-show="tab === 'crimson-shrine'">
+                    <h3>Crimson Shrine</h3>
+                    <p>A remake of a beloved game that doesn't exist.</p>
+                    <p>For Hallowe'en 2020 I made a first-person shooter inspired by the sorely-missed <em>TimeSplitters</em> games; the stories of Robert W.Chambers, James Tiptree Jr., MR James, etc.; and <em>Halo 3</em>'s "Ghost of Lockout."</p>
+                    <p><em>Crimson Shrine</em> is a "king of the hill"-type game in which players take control of a central point - the Shrine itself, surrounded by dark, narrow hallways and looked over by an ominous figure reaching from an uncanny doorway overlooking the abyss.</p>
+                    <p>I say "players," but this is actually a single-player experience; the game is one part of a multimedia horror story told in part through the game's <a href="https://otterdisgrace.itch.io/crimson-shrine/devlog">dev logs</a>, its source code, and is intended to take place in conversation with the player, as opposed to simply delivering a linear narrative.</p>
+                    <p>It's designed to be played over 10-15 minutes; horror outstays its welcome pretty quickly.</p>
+                    <a href="https://otterdisgrace.itch.io/crimson-shrine" class="game-link">Windows</a>
+                </div>
+
+                <div x-show="tab === 'seabrook'">
+                    <h3>The Incident at the Seabrook Residence</h3>
+                    <p>You, whoever you might be, are a contractor working with the Department of <span className="redacted">█████████████</span>, digitising their old paper records for the new era. You've been assigned the poorly-scanned case of the Seabrooks, a family in a small Northern town who reported bumps in the night almost 20 years ago.</p>
+                    <p>I wanted to make a cyberpunk story, but not a neon-and-rainslick cyberpunk story; I wanted to write the kind of cyberpunk that dresses itself in chinos and sits down for eight hours a day to spy on you and sell your darkest secrets to advertisers.</p> 
+                    <p><em>The Incident...</em> is inspired by two degrees in linguistics and the hours I spent transcribing audio and making sense of historical documents, as well as a couple of years working part-time in audio transcription. These weren't <em>bad</em> jobs, exactly, but it's hard not to get invested in the lives of the people you're listening to and reading about, and it feels sort of unfair that they don't even know you exist.</p>
+                    <p>Initially there was a more explicit tutorial around the game's mechanics, but I feel like if I had to suffer badly-written instructions then so do you.</p>
+                    <p>Within the first month of its release more than 500 people played <em>The Incident at the Seabrook Residence</em>, a lot of them more than once. There's a grading system in place that tracks how well you "performed" and unlocks a secret ending with a grade of A or above.</p>
+                    <p>The game is set in the last days of 2003, but a lot of players in 2020 resonated with that secret ending, in which one of the characters pushes back against your state-sanctioned invasion of her privacy.</p>
+                    <a href="https://otterdisgrace.itch.io/seabrook" class="game-link">Play in browser</a>
+                </div>
+
+                <div x-show="tab === 'jams'">
+                    <h3>Game Jams</h3>
+
+                    <h4>Treasure Hunter</h4>
+                    <p>A little puzzle platformer where you get weighed down by the coins you collect, and you have to find a way to abscond with your riches.</p>
+                    <p>Made for Mini Jam in 72 hours. Placed sixth overall! I didn't even know it was a ranked jam! It was described as "innovative" and "fucking impossible," I think by the same person.</p>
+                    <a href="https://otterdisgrace.itch.io/treasure-hunter" class="game-link">Play in Browser</a>
+
+                    <h4>A Funeral</h4>
+                    <p>One of the first things I ever did! For the Ludum Dare, one of those "press X to contemplate mortality" type games.</p>
+                    <p>It was the early days of the COVID-19 pandemic. We were all going through it.</p>
+                    <a href="https://otterdisgrace.itch.io/a-funeral" class=""game-link">Play in Browser</a>
+
+                </div>
+                
             </div>
 
-            <div class="project" id="crimson-shrine">
-                <h3>Crimson Shrine</h3>
-                <p>A remake of a beloved game that doesn't exist.</p>
-                <p>For Hallowe'en 2020 I made a first-person shooter inspired by the sorely-missed <em>TimeSplitters</em> games; the stories of Robert W.Chambers, James Tiptree Jr., MR James, etc.; and <em>Halo 3</em>'s "Ghost of Lockout."</p>
-                <p><em>Crimson Shrine</em> is a "king of the hill"-type game in which players take control of a central point - the Shrine itself, surrounded by dark, narrow hallways and looked over by an ominous figure reaching from an uncanny doorway overlooking the abyss.</p>
-                <p>I say "players," but this is actually a single-player experience; the game is one part of a multimedia horror story told in part through the game's <a href="https://otterdisgrace.itch.io/crimson-shrine/devlog">dev logs</a>, its source code, and is intended to take place in conversation with the player, as opposed to simply delivering a linear narrative.</p>
-                <p>It's designed to be played over 10-15 minutes; horror outstays its welcome pretty quickly.</p>
-                <p class="game-link"><a href="https://otterdisgrace.itch.io/crimson-shrine">Windows</a></p>
-            </div>
-
-            <div class="project" id="seabrook">
-                <h3>The Incident at the Seabrook Residence</h3>
-                <p>You, whoever you might be, are a contractor working with the Department of <span className="redacted">█████████████</span>, digitising their old paper records for the new era. You've been assigned the poorly-scanned case of the Seabrooks, a family in a small Northern town who reported bumps in the night almost 20 years ago.</p>
-                <p>I wanted to make a cyberpunk story, but not a neon-and-rainslick cyberpunk story; I wanted to write the kind of cyberpunk that dresses itself in chinos and sits down for eight hours a day to spy on you and sell your darkest secrets to advertisers.</p> 
-                <p><em>The Incident...</em> is inspired by two degrees in linguistics and the hours I spent transcribing audio and making sense of historical documents, as well as a couple of years working part-time in audio transcription. These weren't <em>bad</em> jobs, exactly, but it's hard not to get invested in the lives of the people you're listening to and reading about, and it feels sort of unfair that they don't even know you exist.</p>
-                <p>Initially there was a more explicit tutorial around the game's mechanics, but I feel like if I had to suffer badly-written instructions then so do you.</p>
-                <p>Within the first month of its release more than 500 people played <em>The Incident at the Seabrook Residence</em>, a lot of them more than once. There's a grading system in place that tracks how well you "performed" and unlocks a secret ending with a grade of A or above.</p>
-                <p>The game is set in the last days of 2003, but a lot of players in 2020 resonated with that secret ending, in which one of the characters pushes back against your state-sanctioned invasion of her privacy.</p>
-                <p class="game-link"><a href="https://otterdisgrace.itch.io/seabrook">Play in browser</a></p>
-            </div>
-
-        </div>
-
-        <div id="currently-playing">
-            <h2>What I'm Playing Right Now</h2>
-
-            <h3>13 Sentinels: Aegis Rim</h3>
-            <p>Like every other person with taste I'm playing Vanillaware's <em>13 Sentinels: Aegis Rim</em> now it's on the Switch, and let me tell you, the rumours of it being a masterpiece were bang on the money.</p>
-            <p>Look. I played <em>Elden Ring</em>, and it's great. But if it had a giant robot, I certainly didn't see it, and <em>13 Sentinels</em> has at least thirteen of them.</p>
-            <p>Ugh. It's just... how do I write the onomatopeia for "chef's kiss"? Do I have to do it with emojis? 🧑‍🍳🤌</p>
         </div>
 
     </main>

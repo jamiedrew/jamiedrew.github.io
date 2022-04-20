@@ -1,45 +1,142 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Hairline&family=Montserrat:wght@200;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,900;1,700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 :root {
-  --sans: 'Montserrat', sans-serif;
-  --bungee: 'Bungee', cursive;
-  --hairline: 'Bungee Hairline', cursive;
+  --title:  'Nunito', sans-serif;
+  --serif:   'Source Serif Pro', serif;
+
+  font-size: 18px;
 
   --sidebar-width: 24rem;
 
-  --dark-grey: darkslategray;
+  /* --black: #261C2C;
+  --dark: #3E2C41;
+  --mid: #5C527F;
+  --light: #6E85B2;
+  --accent: #FAA275; */
+
+  --indigo: #54086b;
+  --magenta: #ff0bac;
+  --turquoise: #00bec5;
+  --black: #050833;
+  --yellow: #F9E900;
+
 }
 
 body {
-  font-family: var(--sans);
+  font-family: var(--serif);
+  color: var(--black);
+  margin: 0;
+  padding: 0;
 }
 
-/* navigation */
+h1, h2, h3, h4 {
+  font-family: var(--title);
+}
 
-#sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: var(--dark-grey);
-  color: white;
-  width: var(--sidebar-width);
-  height: 100%;
+/* HEADER */
+
+header {
+  width: 100%;
+  padding: 2rem 0;
+
+  color: yellow;
+  background-color: var(--turquoise);
 
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: flex-row;
+  justify-content: space-around;
   align-items: center;
+}
+
+header .title {
   text-align: center;
 }
 
-#sidebar a {
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
+main {
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
-main {
-  margin-left: calc(var(--sidebar-width) + 1rem);
-  margin-right: calc(var(--sidebar-width));
-  max-width: 64rem;
+#about {
+  padding-top: 1rem;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+  margin-bottom: -1rem;
+}
+
+#title h1 {
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 0em;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  text-transform: uppercase;
+  font-family: var(--title);
+  font-weight: 500;
+}
+
+nav a, nav a:visited {
+  padding: 1rem;
+  color: white;
+}
+
+nav a:hover {
+  cursor: pointer;
+  color: yellow;
+  background-color: var(--magenta);
+}
+
+/* LINKS */
+
+a, a:visited {
+  color: var(--magenta);
+  text-decoration: none;
+
+}
+
+/* PROJECTS */
+
+#projects-wrapper {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.selector {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3rem;
+  background-color: var(--magenta);
+  font-weight: 700;
+}
+
+.selector a {
+  font-family: var(--title);
+  text-transform: uppercase;
+  color: var(--yellow);
+  padding: 1rem;
+}
+
+.selector a:hover, .selector a:active {
+  color: var(--magenta);
+  background-color: var(--yellow);
+}
+
+#projects-wrapper > .content {
+  width: 66%;
+  margin: 0 auto;
+}
+
+/* CONTENT */
+
+a.game-link {
+  font-family: var(--title);
+  font-weight: 500;
 }
